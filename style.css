@@ -15,21 +15,26 @@
 
     --bg: rgb(var(--back-color));
     --fg: rgb(var(--text-color));
+
+    --border: rgba(var(--text-color), 0.6)
 }
 
 html,
 body {
     cursor: none;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 body {
+    display: grid;
+    place-content: center;
+
     user-select: none;
 
-    height: 100%;
+    height: 100dvh;
 
-    background-color: var(--bg);
-    color: var(--fg);
+    background-color: black;
+
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -70,34 +75,6 @@ body.loaded:hover #cursor {
     opacity: 1;
 }
 
-/* style: app container */
-#app {
-    transition: 1s ease-in-out 3s;
-    filter: opacity(0);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100dvh;
-}
-
-body.loaded #app {
-    transition: 1s ease-in-out 0s;
-    filter: opacity(1);
-}
-
-#header,
-#statusbar {
-    display: flex;
-    width: max-content;
-}
-
-#header > div:first-child {
-    flex-grow: 1;
-}
-
 /* style: loader */
 #loading {
     position: fixed;
@@ -109,6 +86,7 @@ body.loaded #app {
     display: grid;
     place-content: center;
     background-color: var(--bg);
+    color: var(--fg)
 }
 
 @keyframes spin {
@@ -125,66 +103,156 @@ body.loaded #app {
     animation: spin 1s linear infinite;
 }
 
-/* style: numbers */
+/* style: app container */
+#app {
+    transition: 1s ease-in-out 3s;
+    filter: opacity(0);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: max-content;
+
+    border: 5px solid rgba(var(--text-color), 0.1);
+
+    background-color: var(--bg);
+    color: var(--fg);
+
+    text-transform: uppercase;
+}
+
+body.loaded #app {
+    transition: 1s ease-in-out 0s;
+    filter: opacity(1);
+}
+
+#app > * {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border);
+}
+
+header > div:first-child {
+    flex-grow: 1;
+    border-right: 1px solid var(--border);
+    padding-right: 1rem;
+}
+
+main {
+    max-width: 900px;
+    overflow-x: auto;
+    padding-bottom: 0 !important;
+}
+
 table {
     border-collapse: collapse;
     max-width: 900px;
 }
 
-thead th,
-tfoot th {
-    padding: 5px;
-    border: 1px solid rgba(var(--text-color), 0.6)
-}
-
-tfoot th > div {
+footer > div {
     display: flex;
     flex-direction: column;
     gap: 5px;
     font-size: small;
+    text-align: center;
+    width: 25%;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-tfoot th > div > span:first-child {
+footer > div > span:first-child {
     display: block;
-    border: 1px solid rgba(var(--text-color), 0.6);
+    border: 1px solid var(--border);
 
     transition: 1s ease-in-out 0s;
 }
 
-tfoot th > div > span:first-child::after {
+footer > div > span:first-child::after {
     content: " ";
     display: block;
     width: var(--progress, 0%);
-    height: 2dvh;
+    height: 2.5dvh;
     background-color: var(--fg);
-    border: 1px solid rgba(var(--text-color), 0.6);
+    border: 1px solid var(--border);
+    transition: 1s ease 0s;
 }
 
 td {
     padding: 0.75rem 1rem;
-    
     width: 2vmin;
     height: 2vmin;
-
     opacity: 0.6;
-
     text-align: center;
-
-    /* font-size: small; */
-
-    /* border: 1px solid; */
 }
 
-/* debugging */
-/* style: layers */
-.layer-1 {
-    background-color: green;
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 1px;
+}
+/* background */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+/* handle */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
+/* firefox only */
+* {
+    scrollbar-width: 1px;
+    scrollbar-color: transparent transparent;
 }
 
-.layer-2 {
-    background-color: dodgerblue;
+/* animation */
+td {
+    --name: "";
+    --duration: 1;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-name: var(--anime);
+    animation-duration: var(--duration);
 }
 
-.layer-3 {
-    background-color: yellow;
+@keyframes float-bottom {
+    0% {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    50% {
+        padding-bottom: 5px;
+        padding-top: 0;
+    }
+
+    100% {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+}
+
+@keyframes float-left {
+    0% {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    50% {
+        padding-left: 5px;
+        padding-right: 0;
+    }
+
+    100% {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
