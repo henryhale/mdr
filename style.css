@@ -146,7 +146,6 @@ header > div:first-child {
 main {
     max-width: 900px;
     overflow-x: auto;
-    padding-bottom: 0 !important;
 }
 
 table {
