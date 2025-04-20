@@ -11,6 +11,10 @@ basing on the emotion triggers they had with certain numbers on the screen.
 
 I love numbers, maths, played sudoku, watched Severance. Why not?
 
+## Live Demo
+
+- [Launch](henryhale.github.io/mdr) - _for desktop use only_
+
 ## How it works?
 
 Basically, you are presented with a grid of single digit numbers and 
