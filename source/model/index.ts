@@ -1,6 +1,5 @@
 import { createGrid, NO_VALUE } from "../common";
-import { Cell, Layer } from "../layer";
-import { Point } from "../types";
+import { Point, Cell, Layer } from "../layer";
 import { IView } from "../view";
 import { LEVELS } from "./levels";
 

@@ -1,6 +1,5 @@
 import { createGrid, NO_VALUE, randomInt } from "../common"
-import { Point } from "../types"
-import { Cell } from "../layer"
+import { Point, Cell } from "../layer"
 
 export interface IView {
     onCellClick?: (center: string) => void
@@ -38,7 +37,7 @@ export class View implements IView {
     public init(rows: number, cols: number) {
         const { target } = this.options
 
-        this.grid = createGrid(rows, cols, (x, y) => {
+        this.grid = createGrid(rows, cols, (x: number, y: number) => {
             const td = document.createElement("td")
             td.dataset.x = x.toString()
             td.dataset.y = y.toString()
