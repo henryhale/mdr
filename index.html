@@ -4,13 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MDR</title>
+    <title>Micro Data Recognition (MDR)</title>
+    <meta name="description" content="A pattern recognition game based on the Apple TV series - Severance.">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/img/lumon.svg" type="image/xml+svg">
 </head>
 
 <body>
     <div id="loading">
-        <div>LUMON</div>
+        <div>
+            <div class="logo">
+                <span>LUM</span>
+                <img src="/img/lumon.svg" alt="">
+                <span>N</span>
+            </div>
+        </div>
+        <div id="gameover-image"></div>
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -29,53 +38,19 @@
                 <span style="float: right;" id="progress">00%</span>
                 <span style="clear: both;"></span>
             </div>
-            <div>
-                <span>LUMON</span>
+            <div class="logo">
+                <span>LUM</span>
+                <img src="/img/lumon.svg" alt="">
+                <span>N</span>
             </div>
         </header>
         <main>
-            <table>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
+            <table></table>
         </main>
         <footer>
             <div>
                 <span id="bin1" style="--progress: 0%"></span>
-                <span>SIM</span>
+                <span>BAS</span>
             </div>
             <div>
                 <span id="bin2" style="--progress: 0%"></span>

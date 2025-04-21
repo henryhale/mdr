@@ -10,6 +10,7 @@ export interface IView {
     updateLevel(level: string): void
     updateProgress(progress: number): void
     updateBins(values: number[]): void
+    renderGameOver(): void
 }
 
 export type ViewConfig = {
@@ -65,9 +66,9 @@ export class View implements IView {
             target.appendChild(tr)
         }
 
-        target.addEventListener("mousemove", this.onMouseMove.bind(this))
+        target.addEventListener("mousemove", this.onMouseMove.bind(this), { passive: true })
 
-        target.parentElement!.onwheel = this.onScroll.bind(this)
+        target.parentElement!.addEventListener("wheel", this.onScroll.bind(this), { passive: true })
     }
 
     // hovering over a cell scales surrounding numbers basing on distance   
@@ -103,7 +104,7 @@ export class View implements IView {
 
                 default:
                     td.style.transform = "scale(1)"
-                    td.style.opacity = "0.5"
+                    td.style.opacity = "0.65"
                     break;
             }
         }
@@ -164,5 +165,10 @@ export class View implements IView {
         for(const bin in values) {
             this.options.bins[bin]?.setAttribute("style", `--progress: ${values[bin]}%`)
         }
+    }
+
+    // display a gif for "level complete" celebration
+    public renderGameOver(): void {
+        
     }
 }

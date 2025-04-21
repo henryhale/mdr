@@ -19,10 +19,16 @@ const model = new Model(view, parseInt(nextLevel, 10))
 
 model.onLevelComplete = (level) => {
     console.log(`Level: ${level} complete!`)
+
+    const { celebrationImage } = LEVELS[level]
+    $("#loading").style.display = "block"
+    $("#app").style.display = "none"
+    $("#gameover-image").innerHTML = `<img src="${celebrationImage}" width="200" />`
+
     setTimeout(() => {
-        const nxt = Math.min(level + 1, LEVELS.length)
-        window.location.href = `${window.location.origin}?level=${nxt}`
-    }, 1000)
+        level = (level + 1) % LEVELS.length
+        window.location.href = `${window.location.origin}?level=${level}`
+    }, 15000)
 }
 
 // cursor
