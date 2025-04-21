@@ -10,7 +10,7 @@ As someone who enjoys working with numbers, solving Sudoku puzzles, and explorin
 
 ## Live Demo
 
-- [**Launch**](henryhale.github.io/mdr) - _(for desktop use only)_
+- [**Launch**](https://henryhale.github.io/mdr/) - _(for desktop use only)_
 
 ## Roadmap
 
