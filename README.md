@@ -4,12 +4,6 @@ A pattern recognition game inspired by the Apple TV series [_Severance_](https:/
 
 In the show, each team member analyzes grids of numbers and reacts emotionally to hidden patterns. This project brings that concept to life through interactive gameplay focused on focus, logic, and number intuition.
 
-## Why?
-
-I love numbers, played Sudoku, watched Severance. Why not?
-
-The whole point of this project is learn how to focus, detect and recognize patterns in numbers.
-
 ## Motivation
 
 As someone who enjoys working with numbers, solving Sudoku puzzles, and exploring experimental ideas, *MDR* combines all those elements. The goal is to train your brain to detect hidden patterns in randomly generated datasets.
