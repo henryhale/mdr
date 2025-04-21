@@ -1,6 +1,6 @@
 # Micro Data Recognition (MDR)
 
-A pattern recognition game inspired by the Apple TV series _Severance_, specifically the Macro Data Refinement (MDR) team.
+A pattern recognition game inspired by the Apple TV series [_Severance_](https://wikipedia.org/wiki/Severance_(TV_series)), specifically the Macro Data Refinement (MDR) team.
 
 In the show, each team member analyzes grids of numbers and reacts emotionally to hidden patterns. This project brings that concept to life through interactive gameplay focused on focus, logic, and number intuition.
 
