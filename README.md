@@ -1,11 +1,8 @@
 # Micro Data Recognition (MDR)
 
-Based on the Apple TV series titled, "Severance".
+A pattern recognition game inspired by the Apple TV series _Severance_, specifically the Macro Data Refinement (MDR) team.
 
-Inspired by the Macro Data Refinement team in the series.
-
-Each team member had a workstation with a grid of numbers and required to refine the data 
-basing on the emotion triggers they had with certain numbers on the screen. 
+In the show, each team member analyzes grids of numbers and reacts emotionally to hidden patterns. This project brings that concept to life through interactive gameplay focused on focus, logic, and number intuition.
 
 ## Why?
 
@@ -13,51 +10,96 @@ I love numbers, played Sudoku, watched Severance. Why not?
 
 The whole point of this project is learn how to focus, detect and recognize patterns in numbers.
 
+## Motivation
+
+As someone who enjoys working with numbers, solving Sudoku puzzles, and exploring experimental ideas, *MDR* combines all those elements. The goal is to train your brain to detect hidden patterns in randomly generated datasets.
+
 ## Live Demo
 
-- [Launch](henryhale.github.io/mdr) - _for desktop use only_
+- [**Launch**](henryhale.github.io/mdr) - _(for desktop use only)_
 
 ## Roadmap
 
 - [x] Game layout and theme
 - [x] Game levels
-- [x] Basic patterns 
-- [x] Random movements 
-- [x] Add random movements 
+- [x] Pattern generation logic 
+- [x] Layered grid structure
+- [x] Random number movements
 - [x] Loading screen
 - [x] Horizontal scrolling
+- [x] Sound effects & Background audio
+- [x] Game over display
+- [ ] Number drop animations
+- [ ] Retro-style font
+- [ ] Advanced pattern sets
+- [ ] Accessibility improvements
 
-- [ ] Background sounds
-- [ ] Game over display
-- [ ] Animate numbers to drop into bins
-- [ ] Add retro font
+## Gameplay
 
-## How it works?
+You are presented with a grid of single-digit numbers. Your task: identify and select numbers that belong to hidden mathematical patterns.
 
-Basically, you are presented with a grid of single digit numbers and 
-required to identify those that belong to a specific mathematical pattern.
+### Grid Composition
 
-The grid is made up of several layers stacked together.
-Each layer consists of smaller grid containing numbers of a mathematical pattern with a certain complexity.
-The layers are merged enforcing precedence by preserving slots of layers on top.
-Think about it as an unordered stack of several cards viewed from above.
+- The game grid consists of multiple **stacked layers**.
+- Each layer includes one or more **pattern-based subgrids** with increasing complexity.
+- Layers are merged into one visible grid, where **top layers take visual precedence**, like overlapping transparent cards.
 
-Scores are awarded when;
-- you select one of the numbers belonging to a subgrid on the same layer
-- the subgrid is in completely view (all numbers are on top)
+### Rules & Scoring
 
-For all valid scores, the subgrid is then cleared to give room for numbers in a lower layer at any of those positions or replaced with a random number
+- **Correct selection** of a full subgrid on the topmost visible layer awards points.
+- Once a valid pattern is cleared, it either reveals lower layers or is replaced with random digits.
+- **Incorrect selections have no penalty**, but they create cognitive confusion—challenging your focus.
 
-There is no penalty is awarded when a wrong number is selected, it just messes with your mind.
+### Win Condition
 
-The game is complete when;
-- the grid consist of random numbers
-- all subgrids on each layer are detected and cleared
+- All subgrids in every layer must be correctly identified and cleared.
+- Final grid should contain only random, patternless numbers.
+- Game progress must reach **100%** to win a level.
 
-For a win on any level,
-- game progress must be 100%
 
-## Conclusion
+## Installation
 
-Basically a proof of concept made with love by [Henry Hale](github.com/henryhale), enjoy!
-    
+> For local development or offline play:
+
+1. Clone the repository:  
+    ```bash
+    git clone https://github.com/henryhale/mdr.git
+    ```
+2. Install dependencies:
+    ```bash
+    cd mdr
+    pnpm install
+    ```
+3. Run development server:
+    ```bash
+    pnpm dev
+    ```
+4. Open `http://localhost:5173` in a modern web browser.
+
+## Contributing
+
+Contributions, feature ideas, and bug reports are welcome.
+
+**To contribute:**
+
+1. Fork the repository
+    ```bash
+    git clone https://github.com/henryhale/mdr.git
+    ```
+2. Create a new branch:
+    ```bash
+    git checkout -b feature-name
+    ```
+3. Commit changes:
+    ```bash
+    git commit -m "Add feature"
+    ```
+4. Push and open a pull request
+
+## Credits
+
+The game concept is inspired by the Macro Data Refinement department from [Severance](https://wikipedia.org/wiki/Severance_(TV_series)).
+
+## License
+
+Released under [MIT License](./LICENSE.txt), &copy; 2025 [Henry Hale](https://github.com/henryhale).
