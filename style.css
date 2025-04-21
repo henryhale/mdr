@@ -110,6 +110,8 @@ body.loaded:hover #cursor {
     display: flex;
     align-items: center;
     gap: 0;
+    width: max-content;
+    margin: 0 auto;
 }
 
 .logo img { 
