@@ -46,8 +46,12 @@ export class View implements IView {
             td.onmouseover = () => {
                 this.currentPoint = { x, y }
             }
-            const s = `--duration: ${randomInt(5,1)}s; --anime: ${["float-bottom", "float-left","float-bottom", "float-left"][randomInt(4,0)]}`
-            td.setAttribute("style", s)
+
+            const animationName = ["float-bottom", "float-left","float-bottom", "float-left"][randomInt(3,0)]
+            const animationDuration = randomInt(3, 1)
+            const style = `--duration: ${animationDuration}s; --anime: ${animationName}`
+            td.setAttribute("style", style)
+
             return td
         })
         

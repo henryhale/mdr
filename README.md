@@ -9,11 +9,28 @@ basing on the emotion triggers they had with certain numbers on the screen.
 
 ## Why?
 
-I love numbers, maths, played sudoku, watched Severance. Why not?
+I love numbers, played Sudoku, watched Severance. Why not?
+
+The whole point of this project is learn how to focus, detect and recognize patterns in numbers.
 
 ## Live Demo
 
 - [Launch](henryhale.github.io/mdr) - _for desktop use only_
+
+## Roadmap
+
+- [x] Game layout and theme
+- [x] Game levels
+- [x] Basic patterns 
+- [x] Random movements 
+- [x] Add random movements 
+- [x] Loading screen
+- [x] Horizontal scrolling
+
+- [ ] Background sounds
+- [ ] Game over display
+- [ ] Animate numbers to drop into bins
+- [ ] Add retro font
 
 ## How it works?
 
