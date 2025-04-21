@@ -27,8 +27,8 @@ model.onLevelComplete = (level) => {
 
     setTimeout(() => {
         level = (level + 1) % LEVELS.length
-        window.location.href = `${window.location.origin}?level=${level}`
-    }, 15000)
+        window.location.href =`/mdr/?level=${level}`
+    }, 20000)
 }
 
 // cursor
