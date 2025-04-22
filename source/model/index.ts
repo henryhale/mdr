@@ -74,11 +74,19 @@ export class Model implements IModel {
     // merge all points on each layer on to one grid preserving precedence
     private mergeLayersView() {
         for (const layer of this.layers) {
-            for (const point of layer.points) {
-                const { x, y } = point
+            for (const grid of layer.points) {
+                const visible = grid.every(point => {
+                    const { x, y, center } = point
+                    if (this.viewGrid[y][x] == NO_VALUE) return true
+                    const { x: vx, y: vy, center: vc } = this.viewGrid[y][x]
+                    return (vx === x && vy === y && vc === center) 
+                })
 
-                if (this.viewGrid[y][x] == NO_VALUE) {
-                    this.viewGrid[y][x] = point
+                for (const point of grid) {
+                    const { x, y } = point
+                    if (this.viewGrid[y][x] == NO_VALUE) {
+                        this.viewGrid[y][x] = visible ? point : { ...point, center: `${x}-${y}` }
+                    }
                 }
             }
         }

@@ -38,7 +38,7 @@ function getFieldPoints(center: Point, fill: number): Point[] {
 export interface ILayer {
     score: number
     id: number
-    points: Cell[]
+    points: Cell[][]
     clearPointsByCenter(centerStr: string, deleteFn: (p: Cell) => void): void
 }
 
@@ -89,7 +89,7 @@ export class Layer implements ILayer {
     }
 
     public get points() {
-        return [...this.centerToPoints.values()].flat(1)
+        return [...this.centerToPoints.values()]
     }
 
     // remove all points that are surrounding a center point
