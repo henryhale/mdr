@@ -213,8 +213,8 @@ footer > div > span:first-child::after {
 
 td {
     padding: 0.75rem 1rem;
-    width: 1.5vmin;
-    height: 1.5vmin;
+    width: 1rem;
+    height: 1rem;
     opacity: 0.65;
     text-align: center;
 }
