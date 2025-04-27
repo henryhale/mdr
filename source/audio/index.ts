@@ -53,6 +53,8 @@ export class AudioManager implements IAudioManager {
     }
 
     playGameOverSound(): void {
+        this.instances.background.pause()
+
         this.instances.gameover.src = GAMEOVER_SOUND
         this.instances.gameover.play()
     }

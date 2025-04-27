@@ -33,7 +33,7 @@ export const REPEAT: Pattern = () => {
     // create the values
     const fillings = [...Object.keys(FILL_MAP)]
     const fill = fillings[randomInt(fillings.length - 1)]
-    const count = Number(fill) * randomInt(4, 2)
+    const count = Number(fill) * randomInt(6, 2)
     const x = randomInt()
     for (let i = 0; i < count; i++) config.values.push(x)
     return config

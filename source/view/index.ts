@@ -177,7 +177,7 @@ export class View implements IView {
         this.options.overlay.classList.add("flex")
 
         if (image.length) {
-            this.options.overlay.children[1].innerHTML = `<img src="${image}" class="w-full min-w-[200px]" /><div>Next Level: Loading...</div>`
+            this.options.overlay.children[1].innerHTML = `<b>YOU WIN!</b><img src="${image}" class="w-full min-w-[200px]" /><div>Next Level: Loading...</div>`
         }
     }
     

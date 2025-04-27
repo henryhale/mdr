@@ -31,7 +31,7 @@ function start() {
         setTimeout(() => {
             level = (level + 1) % LEVELS.length
             window.location.href =`/mdr/?level=${level}`
-        }, 20000)
+        }, 10000)
     }
 
     view.hideOverlay()
