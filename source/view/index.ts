@@ -10,7 +10,8 @@ export interface IView {
     updateLevel(level: string): void
     updateProgress(progress: number): void
     updateBins(values: number[]): void
-    renderGameOver(): void
+    showOverlay(image: string): void
+    hideOverlay(): void
 }
 
 export type ViewConfig = {
@@ -20,6 +21,8 @@ export type ViewConfig = {
     level: HTMLElement
     progress: HTMLElement
     bins: [HTMLElement,HTMLElement,HTMLElement,HTMLElement]
+    overlay: HTMLElement
+    app: HTMLElement
 }
 
 export class View implements IView {
@@ -48,10 +51,12 @@ export class View implements IView {
                 this.currentPoint = { x, y }
             }
 
-            const animationName = ["float-bottom", "float-left","float-bottom", "float-left"][randomInt(3,0)]
-            const animationDuration = randomInt(3, 1)
-            const style = `--duration: ${animationDuration}s; --anime: ${animationName}`
+            const animationName = ["horizontal", "vertical", "horizontal", "vertical"][randomInt(3,0)]
+            const animationDuration = Math.random() * 2 + 2
+            const style = `--duration: ${animationDuration}s; --axis: ${animationName};`
             td.setAttribute("style", style)
+
+            td.dataset.axis = animationName
 
             return td
         })
@@ -94,11 +99,11 @@ export class View implements IView {
             switch (d) {
                 case 0:
                 case 1:
-                    td.style.transform = "scale(1.75)"
+                    td.style.transform = "scale(2)"
                     td.style.opacity = "1"
                     break;
                 case 2:
-                    td.style.transform = "scale(1.2)"
+                    td.style.transform = "scale(1.5)"
                     td.style.opacity = "0.8"
                     break;
 
@@ -148,7 +153,7 @@ export class View implements IView {
         if (this.grid[y] && this.grid[y][x]) {
             const td = this.grid[y][x]
             td.removeAttribute("data-center")
-            td.innerText = ""
+            td.innerHTML = ""
         }
     }
 
@@ -167,8 +172,17 @@ export class View implements IView {
         }
     }
 
-    // display a gif for "level complete" celebration
-    public renderGameOver(): void {
-        
+    public showOverlay(image = ""): void {
+        this.options.overlay.classList.remove("hidden")
+        this.options.overlay.classList.add("flex")
+
+        if (image.length) {
+            this.options.overlay.children[1].innerHTML = `<img src="${image}" class="w-full min-w-[200px]" /><div>Next Level: Loading...</div>`
+        }
+    }
+    
+    public hideOverlay(): void {
+        this.options.overlay.classList.remove("flex")
+        this.options.overlay.classList.add("hidden")
     }
 }

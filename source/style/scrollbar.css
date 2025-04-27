@@ -1,0 +1,25 @@
+/* width */
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+/* background */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* handle */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
+
+/* firefox only */
+* {
+    scrollbar-width: 1px;
+    scrollbar-color: transparent transparent;
+}

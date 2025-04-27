@@ -1,0 +1,43 @@
+td {
+    --duration: 3s;
+    --axis: horizontal;
+    animation-name: var(--axis, horizontal);
+    animation-duration: var(--duration, 3s);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    /* animation-direction: alternate; */
+}
+
+@keyframes vertical {
+    0% {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    50% {
+        padding-bottom: 5px;
+        padding-top: 0;
+    }
+
+    100% {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+}
+
+@keyframes horizontal {
+    0% {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    50% {
+        padding-left: 5px;
+        padding-right: 0;
+    }
+
+    100% {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

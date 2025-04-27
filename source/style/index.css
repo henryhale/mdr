@@ -1,0 +1,68 @@
+@import url(./cursor.css);
+@import url(./scrollbar.css);
+@import url(./animation.css);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    cursor: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    @apply h-full flex justify-center items-center overflow-hidden;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    @apply w-full h-full p-0 lg:p-2 font-bold bg-white text-black
+    antialiased text-slate-500 dark:text-sky-400 bg-white dark:bg-slate-900;
+}
+
+audio {
+    display: none;
+}
+
+table {
+    font-family: Rubik, sans-serif;
+}
+
+table td {
+    @apply table-cell text-center aspect-[1/1];
+    padding: 0.75rem 1rem;
+}
+
+.bin {
+    @apply flex flex-col text-center w-1/4 space-y-2 text-sm md:text-lg;
+}
+
+.bin > div:first-child {
+    @apply border border-current;
+}
+
+.bin > div:last-child {
+    @apply border border-current h-4 md:h-[4dvh];
+    transition: 1s ease-in-out 0s;
+}
+
+.bin > div:last-child > div {
+    @apply bg-current h-full transition;
+    width: var(--progress, 0%);
+    transition: 1s ease 0s;
+}
+
+#app {
+    transition: 2s ease-in-out 4s;
+    filter: opacity(0);
+}
+
+body.active #app {
+    transition: 2s ease-in-out 0s;
+    filter: opacity(1);
+}
