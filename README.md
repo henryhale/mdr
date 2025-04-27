@@ -1,10 +1,9 @@
-<div align=center>
-
-![MDR](./public/img/lumon.svg)
+<div align="center">
+<img width="45" src="./public/img/lumon.svg" />
 
 # Micro Data Recognition (MDR)
 
-![gameplay](./media/screenshot-1.png)
+![gameplay](./media/screenshot-2.png)
 
 </div>
 
@@ -41,6 +40,10 @@ As someone who enjoys working with numbers, solving Sudoku puzzles, and explorin
 ## Gameplay
 
 You are presented with a grid of single-digit numbers. Your task: identify and select numbers that belong to hidden mathematical patterns.
+
+<video src="./media/gameplay.webm" controls width="600">
+  Your browser does not support the video tag.
+</video>
 
 ### Grid Composition
 
