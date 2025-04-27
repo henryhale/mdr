@@ -1,5 +1,5 @@
 // audio files
-const BACKGROUND_MUSIC = ["audio/bg0.mp3","audio/bg1.mp3","audio/bg2.mp3","audio/bg3.mp3",]
+const BACKGROUND_MUSIC = ["audio/bg0.mp3","audio/bg1.mp3","audio/bg2.mp3",]
 const CLICK_SOUND = "audio/click.mp3"
 const ERROR_SOUND = "audio/error.mp3"
 const MATCH_SOUND = "audio/scored.mp3"
