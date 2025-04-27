@@ -22,7 +22,7 @@ html {
 
 body {
     @apply w-full h-full p-0 lg:p-2 font-bold bg-white text-black
-    antialiased text-slate-500 dark:text-sky-400 bg-white dark:bg-slate-900;
+    antialiased text-slate-900 dark:text-sky-400 bg-white dark:bg-slate-900;
 }
 
 audio {
