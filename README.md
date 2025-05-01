@@ -1,5 +1,5 @@
 <div align="center">
-<img width="45" src="./public/img/lumon.svg" />
+<img width="100" src="./public/img/lumon.svg" />
 
 # Micro Data Recognition (MDR)
 
