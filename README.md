@@ -41,9 +41,7 @@ As someone who enjoys working with numbers, solving Sudoku puzzles, and explorin
 
 You are presented with a grid of single-digit numbers. Your task: identify and select numbers that belong to hidden mathematical patterns.
 
-<video src="./media/gameplay.webm" controls width="600">
-  Your browser does not support the video tag.
-</video>
+[demo.webm](https://github.com/user-attachments/assets/3cd225bc-31c0-4e95-986a-c83a2346dd72)
 
 ### Grid Composition
 
