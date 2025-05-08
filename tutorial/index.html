@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial | Micro Data Recognition (MDR)</title>
+    <meta name="description" content="A pattern recognition game based on the Apple TV series - Severance." />
+    <link rel="shortcut icon" href="/img/lumon.svg" type="image/xml+svg" />
+    <link rel="stylesheet" href="/source/style/index.css" />
+</head>
+
+<body class="bg-white dark:bg-slate-900 loaded">
+    <div id="cursor"></div>
+
+    <div class="flex flex-col space-y-4 w-full max-w-xl h-full mx-auto overflow-y-auto">
+        <div class="flex items-center justify-center text-2xl py-12">
+            <span>LUM</span>
+            <svg class="w-8 h-8">
+                <use href="#icon" />
+            </svg>
+            <span>N</span>
+        </div>
+        <div class="flex flex-col items-center space-y-6 lg:space-y-12 p-4 text-justify">
+            <div>GAMEPLAY</div>
+            <div>
+                You are presented with a grid of single-digit numbers. Your task is to identify and select numbers that belong to hidden mathematical patterns.
+            </div>
+            <div>
+                <div>1. Examine the grid</div>
+                <div>2. Identify the pattern in each subgrid</div>
+                <div>3. Select a subgrid to "refine" (empty and refill with a new pattern)</div>
+                <div>4. Continue identifying and refining patterns</div>
+            </div>
+            <div>The goal is to train your pattern recognition skills much like the severed employess of Lumon Industries train their intuition to refine data.</div>
+            <div>
+                <a href="../" class="border border-current py-1.5 px-4 cursor-none font-medium transition flex items-center">&lt; Play Now!</a>
+            </div>
+        </div>
+    </div>
+
+    <svg style="display: none">
+        <symbol id="icon" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="0" stroke="none" />
+            <g stroke-linecap="round" stroke-linejoin="round" />
+            <path
+                d="M8 4H5a1 1 0 0 0-1 1v3m12-4h3a1 1 0 0 1 1 1v3M4 16v3a1 1 0 0 0 1 1h3m12-4v3a1 1 0 0 1-1 1h-3M6 12s1.714-4 6-4 6 4 6 4-1.714 4-6 4-6-4-6-4m8 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+    </svg>
+
+    <!-- retro style overlay -->
+    <div style="position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100vw; height: 100vh; pointer-events: none; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAUSURBVHgBAQkA9v8A1vX1GQcNKpkU1wOxkVk0zQAAAABJRU5ErkJggg==&quot;);"></div>
+
+    <script type="module" src="./main.ts"></script>
+</body>
+
+</html>

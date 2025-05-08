@@ -1,6 +1,7 @@
 import { View, ViewConfig } from "./source/view"
 import { Model } from "./source/model"
 import { LEVELS } from "./source/model/levels"
+import { initCursor } from "./source/cursor"
 
 // init state
 const nextLevel = new URLSearchParams(location.search).get("level") || "0"
@@ -38,14 +39,7 @@ function start() {
 }
 
 // cursor
-function updateCursor(e: MouseEvent) {
-    const cursor = $("#cursor")
-    const x = e.pageX, y = e.pageY
-    cursor.style.left = `${x}px`
-    cursor.style.top = `${y}px`
-}
-
-document.addEventListener("mousemove", updateCursor)
+initCursor()
 
 // dom loaded
 document.addEventListener("DOMContentLoaded", () => {
